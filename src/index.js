@@ -87,8 +87,8 @@ module.exports = async function(project) {
   });
 
   const fileContent = stringTemplate(fileContentTemplate, {
-    importSection: builded.importSection,
-    useSection: builded.useSection
+    importSection: builded.importSection.join("\r\n"),
+    useSection: builded.useSection.join("\r\n")
   });
 
   fs.writeFileSync(filePath, fileContent);
